@@ -1,0 +1,1 @@
+npx cypress run --reporter cypress-mochawesome-reporter  --headed

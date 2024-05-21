@@ -1,0 +1,32 @@
+{
+  "name": "web-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --reporter cypress-mochawesome-reporter",
+    "headed": "npx cypress run --reporter cypress-mochawesome-reporter  --headed",
+    "start": "npx cypress run --headed & node cucumber-html-report.js"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/result.json"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@cypress/browserify-preprocessor": "latest",
+    "cypress": "^13.8.1",
+    "cypress-iframe": "^1.0.1",
+    "exceljs": "^4.4.0",
+    "neat-csv": "5.1.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "multiple-cucumber-html-reporter": "^3.6.2"
+  }
+}

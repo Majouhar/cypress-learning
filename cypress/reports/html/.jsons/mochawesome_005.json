@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-13T08:02:02.562Z",
+    "end": "2024-05-13T08:02:17.569Z",
+    "duration": 15007,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c7b952e6-cb8a-4597-85ce-9ac752066236",
+      "title": "",
+      "fullFile": "cypress\\integration\\UploadDownload.js",
+      "file": "cypress\\integration\\UploadDownload.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83e5ef2e-b016-4c75-aa97-80458c3af85b",
+          "title": "Upload Download",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify upload and downlad",
+              "fullTitle": "Upload Download Verify upload and downlad",
+              "timedOut": null,
+              "duration": 4403,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\integration\\\\UploadDownload.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\UploadDownload.js\\\\Upload Download -- Verify upload and downlad (failed).png\"\n      ],\n      [\n        \"\\\\UploadDownload.js\\\\Upload Download -- Verify upload and downlad (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"https://rahulshettyacademy.com/upload-download-test/index.html\");\ncy.get(\"#downloadButton\").click();\nvar filePath = Cypress.config(\"fileServerFolder\") + \"/cypress/downloads/download.xlsx\";\ncy.wait(1000);\ncy.task(\"writeExcelTest\", {\n  searchText: \"Apple\",\n  replaceText: 350,\n  change: {\n    rowChange: 0,\n    columnChange: 2\n  },\n  filePath: filePath\n});\ncy.get(\"#fileinput\").selectFile(filePath);",
+              "err": {
+                "message": "CypressError: `cy.task('writeExcelTest')` failed with the following error:\n\n> A Cell needs a Row\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('writeExcelTest')` failed with the following error:\n\n> A Cell needs a Row\n\nhttps://on.cypress.io/api/task\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:135398:70)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (cypress/integration/UploadDownload.js:7:7)\n\nFrom Node.js Internals:\n  Error: A Cell needs a Row\n      at new Cell (C:\\Users\\NDH00965\\OneDrive - Nissan Motor Corporation\\Documents\\Projects\\Learning\\Web Testing\\node_modules\\exceljs\\lib\\doc\\cell.js:15:13)\n      at Row.getCellEx (C:\\Users\\NDH00965\\OneDrive - Nissan Motor Corporation\\Documents\\Projects\\Learning\\Web Testing\\node_modules\\exceljs\\lib\\doc\\row.js:49:14)\n      at Worksheet.getCell (C:\\Users\\NDH00965\\OneDrive - Nissan Motor Corporation\\Documents\\Projects\\Learning\\Web Testing\\node_modules\\exceljs\\lib\\doc\\worksheet.js:595:16)\n      at writeExcelTest (C:\\Users\\NDH00965\\OneDrive - Nissan Motor Corporation\\Documents\\Projects\\Learning\\Web Testing\\cypress.config.js:45:34)",
+                "diff": null
+              },
+              "uuid": "109b5d1b-479c-46ec-87df-52d32517b8ce",
+              "parentUUID": "83e5ef2e-b016-4c75-aa97-80458c3af85b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "109b5d1b-479c-46ec-87df-52d32517b8ce"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4403,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "screenshotOnRunFailure": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
